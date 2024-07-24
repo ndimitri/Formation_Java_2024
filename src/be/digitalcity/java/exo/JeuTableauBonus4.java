@@ -22,6 +22,15 @@ public class JeuTableauBonus4 {
         final int TAILLE_PLATEAU = 10;
         final int NOMBRE_MURS = 5;
 
+        //COLORS
+        final String ANSI_RESET = "\u001B[0m";
+        final String ANSI_RED = "\u001B[31m";
+        final String ANSI_YELLOW = "\u001B[33m";
+        final String ANSI_GREEN = "\u001B[32m";
+        final String ANSI_BLUE = "\u001B[34m";
+        final String ANSI_BLACK = "\u001B[30m";
+
+
         //Variables
         char[][] plateau = new char[TAILLE_PLATEAU][TAILLE_PLATEAU];
         boolean[][] visible = new boolean[TAILLE_PLATEAU][TAILLE_PLATEAU];
@@ -31,6 +40,31 @@ public class JeuTableauBonus4 {
         int nbrPiecesPlacees = 0;
         int compteurPieces = 0;
         int nbrMursPlaces = 0;
+        int cmptDeMouvements = 0;
+        String messageBienvenue =
+            "*********************************************************\n" +
+                "*                                                       *\n" +
+                "*       /\\_/\\                                           *\n" +
+                "*      ( o.o )  Bienvenue au Jeu du Plateau!            *\n" +
+                "*       > ^ <                                           *\n" +
+                "*                                                       *\n" +
+                "*********************************************************"
+            ;
+
+        String messageRules = """
+            ______________________________________
+          ,' -> Déplace ton pion                  `.
+         /  -> Ramasse toutes les pièces pour gagner \\
+        |  -> Fais attention aux murs                |
+        | -> Finis la partie en minimum de mouvements|
+         \\                                         /
+          `._______  _____________________________,'
+              /,'
+          O  /'
+         /|-
+         /|
+        """;
+
 
         //Remplissage du tableau
         for(int i = 0; i < TAILLE_PLATEAU; i++){
@@ -66,21 +100,46 @@ public class JeuTableauBonus4 {
             }
         }
 
+        System.out.println(messageBienvenue);
+        System.out.println();
+        System.out.println(messageRules);
+
         while(!gameWin){
 
-            System.out.println("Choisissez une direction pour déplacer le pion (g, d, h, b). o pour arreter ");
+            System.out.println("Choisissez une direction pour déplacer le pion (g, d, h, b).");
+            System.out.println();
 
             //Affichage du plateau de jeu
+            String printPlateau = "";
             for(int i = 0; i < TAILLE_PLATEAU; i++){
                 for(int j = 0; j < TAILLE_PLATEAU; j++){
                     if(visible[i][j]){
-                        System.out.print(plateau[i][j] + " ");
+                        switch (plateau[i][j]){
+                            //Si la case est le pion
+                            case '*' -> {
+                                printPlateau += ANSI_BLUE + plateau[i][j] + ANSI_RESET + " ";
+                            }
+                            //Si la case est une piece
+                            case '$' -> {
+                                printPlateau += ANSI_YELLOW + plateau[i][j] + ANSI_RESET + " ";
+                            }
+                            //Si la case est un mur
+                            case '#' -> {
+                                printPlateau += ANSI_RED + plateau[i][j] + ANSI_RESET + " ";
+                            }
+                            //Si la case est neutre
+                            default -> {
+                                printPlateau += ANSI_BLACK + plateau[i][j] +ANSI_RESET + " ";
+                            }
+                        }
                     } else {
-                        System.out.print("?"+" ");
+                        //Si la case n'est pas visible
+                        printPlateau +=ANSI_GREEN + "?"+ ANSI_RESET +" ";
                     }
                 }
-                System.out.println();
+                printPlateau+="\n";
             }
+            System.out.println(printPlateau);
 
             //Affichage du nombre de pièces
             System.out.println("Pièces ramassées : " + compteurPieces);
@@ -102,6 +161,7 @@ public class JeuTableauBonus4 {
                         yPion = newY;
                         plateau[xPion][yPion] = '*';
                         updateVisibility(visible, xPion, yPion, TAILLE_PLATEAU);
+                        cmptDeMouvements++;
                     }
                 }
 
@@ -117,6 +177,7 @@ public class JeuTableauBonus4 {
                         yPion = newY;
                         plateau[xPion][yPion] = '*';
                         updateVisibility(visible, xPion, yPion, TAILLE_PLATEAU);
+                        cmptDeMouvements++;
                     }
                 }
 
@@ -132,6 +193,7 @@ public class JeuTableauBonus4 {
                         xPion = newX;
                         plateau[xPion][yPion] = '*';
                         updateVisibility(visible, xPion, yPion, TAILLE_PLATEAU);
+                        cmptDeMouvements++;
                     }
                 }
 
@@ -147,6 +209,7 @@ public class JeuTableauBonus4 {
                         xPion = newX;
                         plateau[xPion][yPion] = '*';
                         updateVisibility(visible, xPion, yPion, TAILLE_PLATEAU);
+                        cmptDeMouvements++;
                     }
                 }
 
@@ -165,6 +228,8 @@ public class JeuTableauBonus4 {
         //Affichage du nombre de pièces
         System.out.println("Pièces ramassées : " + compteurPieces);
         System.out.println("Partie Gagnée !!!");
+        System.out.println();
+        System.out.println("Vous avez finis la partie en : " + cmptDeMouvements + " mouvements");
     }
 
     //Test First Commit
