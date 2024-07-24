@@ -6,10 +6,18 @@ public class JeuTableauBonus4 {
     // Met à jour la visibilité autour du pion
     public static void updateVisibility(boolean[][] visible, int x, int y, int taillePlateau) {
         visible[x][y] = true;
-        if(x > 0) visible[x-1][y] = true;
-        if(x < taillePlateau - 1) visible[x+1][y] = true;
-        if(y > 0) visible[x][y-1] = true;
-        if(y < taillePlateau - 1) visible[x][y+1] = true;
+        if(x > 0) {
+            visible[x-1][y] = true;
+        }
+        if(x < taillePlateau - 1) {
+            visible[x+1][y] = true;
+        }
+        if(y > 0) {
+            visible[x][y-1] = true;
+        }
+        if(y < taillePlateau - 1) {
+            visible[x][y+1] = true;
+        }
     }
 
     public static void main(String[] args) {
@@ -21,6 +29,7 @@ public class JeuTableauBonus4 {
         final int NOMBRE_PIECES = 5;
         final int TAILLE_PLATEAU = 10;
         final int NOMBRE_MURS = 5;
+        final String ANSI_BLUE = "\u001B[34m";
 
         //Variables
         char[][] plateau = new char[TAILLE_PLATEAU][TAILLE_PLATEAU];
