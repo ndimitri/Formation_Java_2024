@@ -23,7 +23,7 @@ public class JeuTableau {
 
         while(continuer){
 
-            System.out.println("Choisissez une direction pour déplacer le pion (g ou d). o pour arreter ");
+            System.out.println("Choisissez une direction pour déplacer le pion (g ou d). q pour arreter ");
 
             //Affichage du plateau de jeu
             String plateauToString = "[";
@@ -71,13 +71,13 @@ public class JeuTableau {
                     }
                 }
                 //Si le joueur veut arreter le jeu
-                case 'o' -> {
+                case 'q' -> {
                     continuer = false;
                     System.out.println("Merci d'avoir jouer au jeu !!!");
                 }
                 //Si le choix n'existe pas
                 default -> {
-                    System.out.println("Cette direction n'existe pas, choississez une direction (g ou d) o pour arreter");
+                    System.out.println("Cette direction n'existe pas, choississez une direction (g ou d) q pour arreter");
                 }
             }
 
