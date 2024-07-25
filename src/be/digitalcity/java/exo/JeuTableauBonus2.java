@@ -23,7 +23,7 @@ public class JeuTableauBonus2 {
 
         //Remplissage du tableau
         for(int i = 0; i < TAILLE_TABLEAU; i++){
-            for(int j = 0 ; j < TAILLE_TABLEAU ; j++){
+            for(int j = 0 ; j < plateau[i].length ; j++){
                 plateau[i][j] = '_';
             }
         }
@@ -42,11 +42,6 @@ public class JeuTableauBonus2 {
                 nbrPiecesPlacees++;
             }
         }
-
-
-
-
-
 
         while(!gameWin){
             System.out.println("Choisissez une direction pour déplacer le pion (g, d, h, b).");
