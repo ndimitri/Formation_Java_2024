@@ -1,5 +1,6 @@
 package be.digitalcity.java.exo;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -24,13 +25,15 @@ public class JeuTableauBonus1 {
         for(int i = 0; i < plateau.length; i++){
             plateau[i] = '_';
         }
+        //Fais exactement la meme chose
+//        Arrays.fill(plateau,'_' );
 
         //Placement du pion sur le plateau
         plateau[indexPion] = '*';
 
         //Placement des pieces
         while (nbrPiecesPlacees < NOMBRE_PIECES){
-            int indexPiece = random.nextInt(0,10);
+            int indexPiece = random.nextInt(0,plateau.length);
 
             if(plateau[indexPiece]=='_'){
                 plateau[indexPiece] = '$';
