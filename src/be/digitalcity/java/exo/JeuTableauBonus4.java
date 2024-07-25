@@ -29,7 +29,7 @@ public class JeuTableauBonus4 {
         final int NOMBRE_PIECES = 5;
         final int TAILLE_PLATEAU = 10;
         final int NOMBRE_MURS = 5;
-        final String ANSI_BLUE = "\u001B[34m";
+
 
         //COLORS
         final String ANSI_RESET = "\u001B[0m";
