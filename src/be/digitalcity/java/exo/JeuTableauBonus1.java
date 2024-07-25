@@ -47,6 +47,8 @@ public class JeuTableauBonus1 {
 
             System.out.println("Choisissez une direction pour déplacer le pion (g ou d). o pour arreter ");
 
+            //region AFFICHER PLATEAU
+
             //Affichage du plateau de jeu
             String plateauToString = "[";
             for(int i = 0; i < plateau.length; i++){
@@ -54,6 +56,8 @@ public class JeuTableauBonus1 {
             }
             plateauToString += "]";
             System.out.println(plateauToString);
+
+            //endregion
 
             //Affichage du nombre de pieces
             System.out.println("Pieces rammassées : "+ compteurPieces);
