@@ -1,4 +1,4 @@
-package be.digitalcity.java.oo.exo;
+package be.digitalcity.java.exo.oo;
 
 public class Personne {
     String nom;
