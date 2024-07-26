@@ -1,7 +1,7 @@
 package be.digitalcity.java.exo;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class MoyenneNotesClasse {
@@ -11,9 +11,9 @@ public class MoyenneNotesClasse {
         DecimalFormat df = new DecimalFormat("#,###.##");
 
         //Variables
-        ArrayList<Double> notesEleves = new ArrayList<>();
+        LinkedList<Double> notesEleves = new LinkedList<>();
         double total = 0;
-        Double noteARajoutee;
+        double noteARajoutee;
 
         do{
             System.out.println("Entrez la note à ajouter (-1 pour arreter) ");
@@ -28,7 +28,7 @@ public class MoyenneNotesClasse {
             }
         }while( noteARajoutee != -1);
 
-        for(Double notes: notesEleves){
+        for(double notes: notesEleves){
             total += notes;
 
         }
