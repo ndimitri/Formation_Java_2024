@@ -23,7 +23,7 @@ public class MainPersonne {
         personne1.prenom = "Gérard";
 
         personne2.nom = "Doe";
-        personne2.prenom = "Jhon";
+        personne2.prenom = "John";
 
         personne1.saluer(personne2);
         personne2.saluer(personne1);
