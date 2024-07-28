@@ -6,6 +6,19 @@ public class MainPersonne {
         Personne personne1 = new Personne();
         Personne personne2 = new Personne();
 
+        //region RecordDemo
+        record PersonneRecord(String prenom, String nom){
+
+            public void saluer(PersonneRecord personneASaluer){
+                System.out.println("Bonjour " + personneASaluer.prenom + " " + personneASaluer.nom + ", je me nomme "+ prenom + " " + nom+".");
+            }
+        }
+        PersonneRecord personneRecord = new PersonneRecord("Luc", "Ilaoui");
+        PersonneRecord personneRecord2 = new PersonneRecord("Marie", "Delacroix");
+        personneRecord.saluer(personneRecord2);
+        //endregion
+
+
         personne1.nom = "Delarue";
         personne1.prenom = "Gérard";
 
