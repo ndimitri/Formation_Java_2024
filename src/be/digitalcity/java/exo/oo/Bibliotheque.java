@@ -1,11 +1,12 @@
 package be.digitalcity.java.exo.oo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Bibliotheque {
 
     String nom;
-    ArrayList<Livre> livres;
+    List<Livre> livres;
 
     Bibliotheque(String nom) {
         this.nom = nom;
