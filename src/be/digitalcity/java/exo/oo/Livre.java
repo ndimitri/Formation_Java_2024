@@ -14,4 +14,10 @@ public class Livre {
         this.date = date;
     }
 
+    Livre(String titre, String auteur) {
+        this(titre, auteur, LocalDate.now());
+
+    }
+
+
 }

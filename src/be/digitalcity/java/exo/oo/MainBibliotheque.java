@@ -10,6 +10,7 @@ public class MainBibliotheque {
         Livre livre1 = new Livre("La petit chat gris qui miaulait", "J.Decasse", LocalDate.of(2019, 2, 8));
         Livre livre2 = new Livre("La terre est belle", "A.Jardin", LocalDate.of(2018, 6, 24));
         Livre livre3 = new Livre("Ceci n'est pas un livre", "G.Fuchaut", LocalDate.of(2022, 1, 15));
+        Livre livre4 = new Livre("Moi", "P.Delarue");
 
         //Ajout des livres dans la bibliothèque
         maBibliotheque.ajouterLivre(livre1);
