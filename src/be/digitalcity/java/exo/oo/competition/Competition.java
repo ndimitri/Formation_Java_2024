@@ -1,24 +1,25 @@
 package be.digitalcity.java.exo.oo.competition;
 
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class Competition {
     static final int NOMBRE_PARTICIPANTS_MIN_DEFAULT = 3;
     static final int NOMBRE_PARTICIPANTS_MAX_DEFAULT = 12;
 
     //Variables
-    int nbrMinParticipant, nbrMaxParticipant;
+    final int nbrMinParticipant, nbrMaxParticipant;
     //Lancé / Pas lancé
     boolean status;
-    List<Personne> participants;
+    final Set<Personne> participants;
 
 
     Competition(int nbrMinParticipant, int nbrMaxParticipant){
         this.nbrMinParticipant = nbrMinParticipant;
         this.nbrMaxParticipant = nbrMaxParticipant;
         this.status = false;
-        this.participants = new ArrayList<Personne>();
+        this.participants = new HashSet<>();
     }
 
     Competition(){
