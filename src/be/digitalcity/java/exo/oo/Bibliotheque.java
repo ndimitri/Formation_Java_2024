@@ -18,9 +18,9 @@ public class Bibliotheque {
 
     }
 
-    Livre chercherLivre(String nom){
+    Livre chercherLivre(String titre){
         for (Livre livre : livres ) {
-            if(livre.titre.equals(nom)){
+            if(livre.titre.equals(titre)){
                 return livre;
             }
         }
@@ -34,6 +34,12 @@ public class Bibliotheque {
         else
             return null;
 
+    }
+
+    void retirerLivreParTitre(String titre){
+        Livre livre = this.chercherLivre(titre);
+        if(livre!=null)
+            this.supprimerLivre(livre);
     }
 
 
