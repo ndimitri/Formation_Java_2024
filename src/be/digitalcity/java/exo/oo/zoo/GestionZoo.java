@@ -47,17 +47,24 @@ public class GestionZoo {
   }
 
   private void afficherMenu() {
-    System.out.println("\n--- Menu Gestion Zoo ---\n");
-    System.out.println("1. Ajouter un enclos");
-    System.out.println("2. Ajouter un animal");
-    System.out.println("3. Déplacer un animal");
-    System.out.println("4. Déplacer les animaux d'un enclos");
-    System.out.println("5. Afficher l'état du zoo");
-    System.out.println("6. Quitter");
+    System.out.println("\n╔═══════════════════════════════════╗");
+    System.out.println("║      --- Menu Gestion Zoo ---     ║");
+    System.out.println("╠═══════════════════════════════════╣");
+    System.out.println("║ 1. Ajouter un enclos              ║");
+    System.out.println("║ 2. Ajouter un animal              ║");
+    System.out.println("║ 3. Déplacer un animal             ║");
+    System.out.println("║ 4. Déplacer les animaux d'un enclos║");
+    System.out.println("║ 5. Afficher l'état du zoo         ║");
+    System.out.println("║ 6. Quitter                        ║");
+    System.out.println("╚═══════════════════════════════════╝");
     System.out.print("Choisissez une option: ");
   }
 
   private void ajouterEnclos() {
+    System.out.println("\n╔═══════════════════════════════════╗");
+    System.out.println("║         --- Ajouter Enclos ---         ║");
+    System.out.println("╚═══════════════════════════════════╝");
+
     System.out.print("Nom de l'enclos: ");
     String nom = scanner.nextLine();
 
@@ -78,6 +85,10 @@ public class GestionZoo {
   }
 
   private void ajouterAnimal() {
+    System.out.println("\n╔═══════════════════════════════════╗");
+    System.out.println("║         --- Ajouter Animal ---         ║");
+    System.out.println("╚═══════════════════════════════════╝");
+
     System.out.print("Nom de l'animal: ");
     String nom = scanner.nextLine();
 
@@ -110,6 +121,10 @@ public class GestionZoo {
   }
 
   private void deplacerAnimal() {
+    System.out.println("\n╔═══════════════════════════════════╗");
+    System.out.println("║         --- Déplacer Animal ---         ║");
+    System.out.println("╚═══════════════════════════════════╝");
+
     System.out.print("Nom de l'animal a déplacer: ");
     String nomAnimal = scanner.nextLine();
 
@@ -150,6 +165,10 @@ public class GestionZoo {
   }
 
   private void deplacerAnimaux() {
+    System.out.println("\n╔═══════════════════════════════════╗");
+    System.out.println("║         --- Déplacer Animaux ---       ║");
+    System.out.println("╚═══════════════════════════════════╝");
+
     System.out.print("Nom de l'enclos des animaux de départs: ");
     String nomEnclosDepart = scanner.nextLine();
 
@@ -181,17 +200,35 @@ public class GestionZoo {
 
   }
 
+//  private void afficherEtatZoo() {
+//    System.out.println("\n--- État du Zoo ---");
+//    System.out.println("Zoo: " + zoo.nom);
+//    for (Enclos enclos : zoo.enclosSet) {
+//      System.out.println("Enclos: " + enclos.nom + " (" + enclos.type.getValeur() + ")");
+//      System.out.println("Capacité: " + enclos.capacite);
+//      System.out.println("Animaux:");
+//      for (Animal animal : enclos.animaux) {
+//        System.out.println("  - " + animal.nom + " (" + animal.espece + ")");
+//      }
+//      System.out.println();
+//    }
+//  }
+
   private void afficherEtatZoo() {
-    System.out.println("\n--- État du Zoo ---");
+    System.out.println("\n╔═══════════════════════════════════╗");
+    System.out.println("║        --- État du Zoo ---              ║");
+    System.out.println("╚═══════════════════════════════════╝");
+
     System.out.println("Zoo: " + zoo.nom);
     for (Enclos enclos : zoo.enclosSet) {
-      System.out.println("Enclos: " + enclos.nom + " (" + enclos.type.getValeur() + ")");
-      System.out.println("Capacité: " + enclos.capacite);
-      System.out.println("Animaux:");
+      System.out.println("╔═══════════════════════════════════╗");
+      System.out.println("║ Enclos: " + enclos.nom + " (" + enclos.type.getValeur() + ")");
+      System.out.println("║ Capacité: " + enclos.capacite);
+      System.out.println("║ Animaux:");
       for (Animal animal : enclos.animaux) {
-        System.out.println("  - " + animal.nom + " (" + animal.espece + ")");
+        System.out.println("║   - " + animal.nom + " (" + animal.espece + ")");
       }
-      System.out.println();
+      System.out.println("╚═══════════════════════════════════╝\n");
     }
   }
 }
