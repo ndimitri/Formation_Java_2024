@@ -111,7 +111,7 @@ public class GestionZooGUI {
 
     int result = JOptionPane.showConfirmDialog(frame, panelEnclos, "Ajouter un enclos", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
     if (result == JOptionPane.OK_OPTION) {
-      String nom = nomEnclosField.getText();
+      String nom = nomEnclosField.getText().isEmpty() ? ("Enclos "+ (zoo.enclosSet.size()+1)) : nomEnclosField.getText();
       Environnement type = (Environnement) typeEnclosComboBox.getSelectedItem();
       String capaciteInput = capaciteField.getText();
       int capacite = capaciteInput.isEmpty() ? Enclos.CAPACITE_DEFAULT : Integer.parseInt(capaciteInput);
@@ -143,8 +143,8 @@ public class GestionZooGUI {
 
     int result = JOptionPane.showConfirmDialog(frame, new Object[]{panelAnimal, panelEnclos}, "Ajouter un animal", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
     if (result == JOptionPane.OK_OPTION) {
-      String nom = nomAnimalField.getText();
-      String espece = especeField.getText();
+      String nom = nomAnimalField.getText().isEmpty() ? "N/A" : nomAnimalField.getText();
+      String espece = especeField.getText().isEmpty() ? "N/A" : especeField.getText();
       Environnement type = (Environnement) typeAnimalComboBox.getSelectedItem();
 
       Animal animal = new Animal(nom, espece, type);
