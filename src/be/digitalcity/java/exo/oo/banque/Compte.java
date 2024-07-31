@@ -36,13 +36,13 @@ public class Compte {
 
     public void retrait(double montant){
         if(montant > 0){
-            this.solde = this.solde - montant;
+            setSolde(this.solde-montant);
         }
     }
 
     public void depot(double montant){
         if(montant > 0){
-            this.solde += montant;
+            setSolde(this.solde+montant);
         }
 
     }
