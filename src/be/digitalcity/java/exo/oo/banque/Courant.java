@@ -7,13 +7,13 @@ public class Courant {
 
     private double solde;
     private double ligneDeCredit;
-    private be.digitalcity.java.exo.oo.Personne titulaire;
+    private Personne titulaire;
 
-    public Courant(String numero, be.digitalcity.java.exo.oo.Personne titulaire) {
+    public Courant(String numero, Personne titulaire) {
         this(numero,0.0,titulaire);
     }
 
-    public Courant(String numero, double ligneDeCredit, be.digitalcity.java.exo.oo.Personne titulaire) {
+    public Courant(String numero, double ligneDeCredit, Personne titulaire) {
         this.numero = numero;
         setLigneDeCredit(ligneDeCredit);
         this.titulaire = titulaire;
@@ -28,7 +28,7 @@ public class Courant {
 //        this.numero = numero;
 //    }
 
-    public be.digitalcity.java.exo.oo.Personne getTitulaire() {
+    public Personne getTitulaire() {
         return titulaire;
     }
 
