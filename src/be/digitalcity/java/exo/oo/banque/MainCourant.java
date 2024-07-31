@@ -9,26 +9,33 @@ public class MainCourant {
         Personne pers1 = new Personne("Monier", "Luc", LocalDate.of(2000, 5,8));
         Personne pers2 = new Personne("Pelistre", "Marie", LocalDate.of(1987, 2,16));
 
-        Courant compteCourant = new Courant("IBAN123456789", pers1);
-        Courant compteCourant2 =  new Courant("IBAN123456789", -20, pers2 );
+        Courant compteCourant1 = new Courant("IBAN123456789",100, pers1);
+        Compte compteCourant2 = new Courant("IBAN456789123", pers2);
 
-        System.out.println(compteCourant2.getLigneDeCredit()); //0
+        Epargne compteEpargne1 = new Epargne("IBAN987654321", pers1);
+        Compte compteEpargne2 = new Compte("IBAN789123456", pers2);
 
-        System.out.println(compteCourant); //0
 
-        compteCourant.depot(100);
-        System.out.println(compteCourant); //100
+        System.out.println(compteCourant1);
+        System.out.println(compteEpargne1);
 
-        compteCourant.setLigneDeCredit(100); // Solde peut aller jusqu'a -100eu
+        System.out.println(compteCourant2);
+        System.out.println(compteEpargne2);
 
-        compteCourant.retrait(200);
-        System.out.println(compteCourant);// -100
+        //Depot 50eu sur compteEpargne1
+        compteEpargne1.depot(50);
+        System.out.println(compteEpargne1.getDateDernierRetrait());
 
-        compteCourant.depot(50);
-        System.out.println(compteCourant);// -50
+        System.out.println(compteEpargne1);
 
-        compteCourant.setTitulaire(pers2); // On change de titulaire
-        System.out.println(compteCourant);
+        compteEpargne1.retrait(20);
+        System.out.println(compteEpargne1);
+        System.out.println(compteEpargne1.getDateDernierRetrait());
+
+
+        System.out.println(-compteCourant1.getLigneDeCredit() + " euros");
+
+
 
 
     }
