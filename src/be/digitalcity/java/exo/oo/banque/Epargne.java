@@ -10,7 +10,6 @@ public class Epargne extends Compte{
 
     public Epargne(String numero, Personne titulaire){
         super(numero, titulaire);
-        this.dateDernierRetrait = LocalDateTime.now();
     }
 
     public LocalDateTime getDateDernierRetrait() {
