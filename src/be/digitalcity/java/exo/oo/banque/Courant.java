@@ -3,7 +3,7 @@ package be.digitalcity.java.exo.oo.banque;
 import be.digitalcity.java.exo.oo.Personne;
 
 public class Courant {
-    private String numero;
+    private final String numero;
 
     private double solde;
     private double ligneDeCredit;
@@ -24,9 +24,9 @@ public class Courant {
         return numero;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
+//    public void setNumero(String numero) {
+//        this.numero = numero;
+//    }
 
     public be.digitalcity.java.exo.oo.Personne getTitulaire() {
         return titulaire;
@@ -52,7 +52,7 @@ public class Courant {
 
     public void retrait(double montant){
         if(montant > 0){
-            if((this.solde - montant) >= (0-this.ligneDeCredit)){
+            if((this.solde - montant) >= (0-this.ligneDeCredit)){ // montant <= solde + ligneDeCredit
                 this.solde = this.solde - montant;
             }
         }
