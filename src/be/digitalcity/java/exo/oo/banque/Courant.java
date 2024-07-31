@@ -1,17 +1,19 @@
-package be.digitalcity.java.exo.oo;
+package be.digitalcity.java.exo.oo.banque;
+
+import be.digitalcity.java.exo.oo.Personne;
 
 public class Courant {
     private String numero;
 
     private double solde;
     private double ligneDeCredit;
-    private Personne titulaire;
+    private be.digitalcity.java.exo.oo.Personne titulaire;
 
-    public Courant(String numero, Personne titulaire) {
+    public Courant(String numero, be.digitalcity.java.exo.oo.Personne titulaire) {
         this(numero,0.0,titulaire);
     }
 
-    public Courant(String numero, double ligneDeCredit, Personne titulaire) {
+    public Courant(String numero, double ligneDeCredit, be.digitalcity.java.exo.oo.Personne titulaire) {
         this.numero = numero;
         setLigneDeCredit(ligneDeCredit);
         this.titulaire = titulaire;
@@ -26,7 +28,7 @@ public class Courant {
         this.numero = numero;
     }
 
-    public Personne getTitulaire() {
+    public be.digitalcity.java.exo.oo.Personne getTitulaire() {
         return titulaire;
     }
 

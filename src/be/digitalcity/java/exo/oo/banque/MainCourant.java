@@ -1,4 +1,6 @@
-package be.digitalcity.java.exo.oo;
+package be.digitalcity.java.exo.oo.banque;
+
+import be.digitalcity.java.exo.oo.Personne;
 
 import java.time.LocalDate;
 
@@ -8,6 +10,9 @@ public class MainCourant {
         Personne pers2 = new Personne("Pelistre", "Marie", LocalDate.of(1987, 2,16));
 
         Courant compteCourant = new Courant("IBAN123456789", pers1);
+        Courant compteCourant2 =  new Courant("IBAN123456789", -20, pers2 );
+
+        System.out.println(compteCourant2.getLigneDeCredit()); //0
 
         System.out.println(compteCourant); //0
 
