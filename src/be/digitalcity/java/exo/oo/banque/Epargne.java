@@ -24,5 +24,8 @@ public class Epargne extends Compte{
         }
     }
 
-
+    @Override
+    protected double calculInteret() {
+        return (this.getSolde() * 4.5)/100;
+    }
 }

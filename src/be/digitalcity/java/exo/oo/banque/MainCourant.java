@@ -13,29 +13,45 @@ public class MainCourant {
         Compte compteCourant2 = new Courant("IBAN456789123", pers2);
 
         Epargne compteEpargne1 = new Epargne("IBAN987654321", pers1);
-        Compte compteEpargne2 = new Compte("IBAN789123456", pers2);
+        Compte compteEpargne2 = new Epargne("IBAN789123456", pers2);
 
+        //region Test Exo Heritage
+//        System.out.println(compteCourant1);
+//        System.out.println(compteEpargne1);
+//
+//        System.out.println(compteCourant2);
+//        System.out.println(compteEpargne2);
+//
+//        //Depot 50eu sur compteEpargne1
+//        compteEpargne1.depot(50);
+//        System.out.println(compteEpargne1.getDateDernierRetrait());
+//
+//        System.out.println(compteEpargne1);
+//
+//        compteEpargne1.retrait(20);
+//        System.out.println(compteEpargne1);
+//        System.out.println(compteEpargne1.getDateDernierRetrait());
+//
+//
+//        System.out.println(-compteCourant1.getLigneDeCredit() + " euros");
+//endregion
 
+        //region test Exo classe abstraite
+
+        compteCourant1.depot(50);
+        compteCourant1.appliquerInteret();
         System.out.println(compteCourant1);
-        System.out.println(compteEpargne1);
+        compteCourant1.retrait(100);
+        System.out.println(compteCourant1);
+        compteCourant1.appliquerInteret();
+        System.out.println(compteCourant1);
 
-        System.out.println(compteCourant2);
-        System.out.println(compteEpargne2);
-
-        //Depot 50eu sur compteEpargne1
         compteEpargne1.depot(50);
-        System.out.println(compteEpargne1.getDateDernierRetrait());
-
+        compteEpargne1.appliquerInteret();
         System.out.println(compteEpargne1);
 
-        compteEpargne1.retrait(20);
-        System.out.println(compteEpargne1);
-        System.out.println(compteEpargne1.getDateDernierRetrait());
 
-
-        System.out.println(-compteCourant1.getLigneDeCredit() + " euros");
-
-
+        //endregion
 
 
     }

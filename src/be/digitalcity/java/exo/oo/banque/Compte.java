@@ -2,7 +2,7 @@ package be.digitalcity.java.exo.oo.banque;
 
 import be.digitalcity.java.exo.oo.Personne;
 
-public class Compte {
+public abstract class Compte {
     private final String numero;
     private double solde;
     private Personne titulaire;
@@ -13,6 +13,7 @@ public class Compte {
         this.titulaire = titulaire;
 
     }
+    //region GET/SET
 
     public String getNumero() {
         return numero;
@@ -34,6 +35,8 @@ public class Compte {
         this.titulaire = titulaire;
     }
 
+    //endregion
+
     public void retrait(double montant){
         if(montant > 0){
             setSolde(this.solde-montant);
@@ -47,9 +50,16 @@ public class Compte {
 
     }
 
+    protected abstract double calculInteret();
+
     @Override
     public String toString() {
         return this.getTitulaire().getNom() +" "+ this.getTitulaire().getPrenom() +" "+ this.getNumero() +"(" + this.getClass().getSimpleName() + ") :  " + this.getSolde() + " euros";
+
+    }
+
+    public void appliquerInteret(){
+        setSolde( this.solde + this.calculInteret());
 
     }
 

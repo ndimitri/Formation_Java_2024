@@ -34,4 +34,11 @@ public class Courant extends Compte{
         }
     }
 
+    @Override
+    protected double calculInteret() {
+        if(this.getSolde() > 0){
+            return (this.getSolde()*3)/100;
+        }
+        return (this.getSolde()*9.75)/100;
+    }
 }
