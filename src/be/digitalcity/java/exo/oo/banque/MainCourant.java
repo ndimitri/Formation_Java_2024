@@ -38,21 +38,34 @@ public class MainCourant {
 
         //region test Exo classe abstraite
 
-        compteCourant1.depot(50);
-        compteCourant1.appliquerInteret();
-        System.out.println(compteCourant1);
-        compteCourant1.retrait(100);
-        System.out.println(compteCourant1);
-        compteCourant1.appliquerInteret();
-        System.out.println(compteCourant1);
-
-        compteEpargne1.depot(50);
-        compteEpargne1.appliquerInteret();
-        System.out.println(compteEpargne1);
+//        compteCourant1.depot(50);
+//        compteCourant1.appliquerInteret();
+//        System.out.println(compteCourant1);
+//        compteCourant1.retrait(100);
+//        System.out.println(compteCourant1);
+//        compteCourant1.appliquerInteret();
+//        System.out.println(compteCourant1);
+//
+//        compteEpargne1.depot(50);
+//        compteEpargne1.appliquerInteret();
+//        System.out.println(compteEpargne1);
 
 
         //endregion
 
+
+        //region Exo Interface
+        Customer customerCourant = new Courant("IBAN159753456", pers1);
+
+        Banker bankerCourant = new Courant("IBAN1654798623", pers1);
+
+        customerCourant.depot(50);
+        System.out.println(customerCourant);
+
+        bankerCourant.appliquerInteret();
+
+
+        //endregion
 
     }
     }

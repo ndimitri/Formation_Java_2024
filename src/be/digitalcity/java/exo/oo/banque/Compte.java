@@ -2,7 +2,7 @@ package be.digitalcity.java.exo.oo.banque;
 
 import be.digitalcity.java.exo.oo.Personne;
 
-public abstract class Compte {
+public abstract class Compte implements Banker{
     private final String numero;
     private double solde;
     private Personne titulaire;
