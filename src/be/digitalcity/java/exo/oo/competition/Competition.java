@@ -5,8 +5,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Competition<T extends Competiteur>{
-    static final int NOMBRE_PARTICIPANTS_MIN_DEFAULT = 3;
-    static final int NOMBRE_PARTICIPANTS_MAX_DEFAULT = 12;
+    private static final int NOMBRE_PARTICIPANTS_MIN_DEFAULT = 3;
+    private static final int NOMBRE_PARTICIPANTS_MAX_DEFAULT = 12;
 
     //Variables
     private final int nbrMinParticipant, nbrMaxParticipant;
