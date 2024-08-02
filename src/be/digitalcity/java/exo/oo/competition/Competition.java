@@ -47,6 +47,10 @@ public class Competition<T extends Competiteur>{
         return nbrMaxParticipant;
     }
 
+    public Set<T> getParticipants() {
+        return Set.copyOf(participants);
+    }
+
     boolean lancer(){
         //Si la compétition n'est pas encore lancée et qu'il y a le nbr min de participants -> la compet est lancée
         if( !status && participants.size() >= nbrMinParticipant ){
@@ -73,7 +77,7 @@ public class Competition<T extends Competiteur>{
 
     boolean desinscrireParticipant(T competiteur){
         //Si la compet n'est pas encore lancé et que le participant est deja inscrit --> on remove le participant
-        if(!status && participants.contains(competiteur)  ){
+        if(!status && competiteur != null){
             participants.remove(competiteur);
             return true;
         }
