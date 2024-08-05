@@ -5,8 +5,8 @@ import java.time.LocalDate;
 public class MainCompetition {
     public static void main(String[] args) {
 
-        Competition<Nageur> comp1 = new Competition(2, 4);
-        Competition<Coureur> comp2 = new Competition(4);
+        Competition<Nageur> comp1 = new Competition(3, 4);
+        Competition<Coureur> comp2 = new Competition(5);
 
         Coureur c1 = new Coureur("Lucirki", "Marie", LocalDate.EPOCH, 3.2);
         Coureur c2 = new Coureur("Lulubulu", "Jean", LocalDate.EPOCH, 5);
@@ -49,19 +49,22 @@ public class MainCompetition {
 
         //region test Polymorphisme
 
-        comp1.inscrireParticipant(n1);
-        System.out.println(comp1.lancer());
-        comp1.inscrireParticipant(n2);
-        System.out.println(comp1);
+//        comp1.inscrireParticipant(n1);
+//        comp1.inscrireParticipant(n2);
+//        comp1.inscrireParticipant(n3);
+//        System.out.println(comp1);
+//        comp1.lancer();
+//        System.out.println(comp1.getPodium());
 
 
         comp2.inscrireParticipant(c1);
         comp2.inscrireParticipant(c2);
         comp2.inscrireParticipant(c3);
-        comp2.lancer();
         System.out.println(comp2);
+        comp2.lancer();
+        System.out.println(comp2.getPodium());
 
-        c1.getCoefficientCourse();
+
 
         //endregion
 
