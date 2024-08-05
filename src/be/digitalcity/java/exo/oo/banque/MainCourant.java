@@ -9,6 +9,7 @@ public class MainCourant {
         Personne pers1 = new Personne("Monier", "Luc", LocalDate.of(2000, 5,8));
         Personne pers2 = new Personne("Pelistre", "Marie", LocalDate.of(1987, 2,16));
 
+
         Courant compteCourant1 = new Courant("IBAN123456789",100, pers1);
         Compte compteCourant2 = new Courant("IBAN456789123", pers2);
 
@@ -55,14 +56,44 @@ public class MainCourant {
 
 
         //region Exo Interface
-        Customer customerCourant = new Courant("IBAN159753456", pers1);
+//        Customer customerCourant = new Courant("IBAN159753456", pers1);
+//
+//        Banker bankerCourant = new Courant("IBAN1654798623", pers1);
+//
+//        customerCourant.depot(50);
+//        System.out.println(customerCourant);
+//
+//        bankerCourant.appliquerInteret();
 
-        Banker bankerCourant = new Courant("IBAN1654798623", pers1);
 
-        customerCourant.depot(50);
-        System.out.println(customerCourant);
+        //endregion
 
-        bankerCourant.appliquerInteret();
+        //region Exo Exception
+
+        //Test IllegalArgumentException ligneDeCredit
+        try{
+            Courant compteCourantException = new Courant("IBAN123456789",-100, pers1);
+        }catch(IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
+
+        //Test IllegalArgumentException depot()
+        try {
+            compteCourant1.depot(-10);
+
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        compteCourant1.depot(100);
+
+        //Test SoldeInsuffisantException
+        try{
+            compteCourant1.retrait(500);
+        } catch (SoldeInsuffisantException e){
+            System.out.println(e.getMessage());
+        }
+        System.out.println(compteCourant1);
 
 
         //endregion

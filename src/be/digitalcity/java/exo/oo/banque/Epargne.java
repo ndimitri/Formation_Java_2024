@@ -18,10 +18,12 @@ public class Epargne extends Compte{
 
     @Override
     public void retrait(double montant) {
-        if(this.getSolde() - montant>=0){
-            super.retrait(montant);
-            this.dateDernierRetrait = LocalDateTime.now();
+        if(this.getSolde() - montant < 0){
+            //Exception
+            throw new SoldeInsuffisantException();
         }
+        super.retrait(montant);
+        this.dateDernierRetrait = LocalDateTime.now();
     }
 
     @Override

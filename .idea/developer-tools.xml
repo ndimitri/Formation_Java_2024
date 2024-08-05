@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DeveloperToolsToolWindowSettingsV1" lastSelectedContentNodeId="sql-formatting">
+    <developerToolsConfigurations>
+      <developerToolConfiguration developerToolId="sql-formatting" id="a84f00b8-7c88-4206-8604-947c7ebd5526" name="Workbench">
+        <properties>
+          <property key="sourceText" type="INPUT" value="kotlin.String|select c.id, c.name, o.address, o.orderedAt from customers c left join orders o ON (o.customerId = c.id) order by o.orderedAt" />
+        </properties>
+      </developerToolConfiguration>
+    </developerToolsConfigurations>
+  </component>
+</project>

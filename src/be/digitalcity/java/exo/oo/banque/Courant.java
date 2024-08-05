@@ -22,16 +22,19 @@ public class Courant extends Compte{
     }
 
     public void setLigneDeCredit(double ligneDeCredit) {
-        if(ligneDeCredit >= 0){
-            this.ligneDeCredit = ligneDeCredit;
+        if(ligneDeCredit < 0){
+            throw new IllegalArgumentException("Ligne de crédit négatif");
         }
+        this.ligneDeCredit = ligneDeCredit;
     }
 
     @Override
     public void retrait(double montant) {
-        if((super.getSolde() - montant) >= (0-this.ligneDeCredit)){
-            super.retrait(montant);
+        if((super.getSolde() - montant) < (0-this.ligneDeCredit)){
+            //Exception
+            throw new SoldeInsuffisantException();
         }
+        super.retrait(montant);
     }
 
     @Override

@@ -38,16 +38,17 @@ public abstract class Compte implements Banker{
     //endregion
 
     public void retrait(double montant){
-        if(montant > 0){
-            setSolde(this.solde-montant);
+        if(montant <= 0){
+            throw new IllegalArgumentException("Montant du retrait négatif ou égale à 0");
         }
+        setSolde(this.solde-montant);
     }
 
     public void depot(double montant){
-        if(montant > 0){
-            setSolde(this.solde+montant);
+        if(montant <= 0){
+            throw new IllegalArgumentException("Montant du dépot négatif ou égale à 0");
         }
-
+        setSolde(this.solde+montant);
     }
 
     protected abstract double calculInteret();
