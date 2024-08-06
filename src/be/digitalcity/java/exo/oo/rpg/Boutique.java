@@ -1,5 +1,6 @@
 package be.digitalcity.java.exo.oo.rpg;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Boutique {
@@ -16,7 +17,12 @@ public class Boutique {
       System.out.println("5. Acheter une Potion Simple (10 or pour +7PV)");
       System.out.println("6. Acheter une Potion Maxi (50 or pour +20PV)");
       System.out.println("7. Quitter la boutique");
-      int choix = scanner.nextInt();
+      int choix;
+      try{
+        choix = scanner.nextInt();
+      }catch(InputMismatchException e){
+        choix = 8;
+      }
       scanner.nextLine(); // Consume newline left-over
 
       switch (choix) {
