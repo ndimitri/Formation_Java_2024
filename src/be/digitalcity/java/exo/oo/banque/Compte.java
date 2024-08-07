@@ -2,10 +2,14 @@ package be.digitalcity.java.exo.oo.banque;
 
 import be.digitalcity.java.exo.oo.Personne;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Compte implements Banker{
     private final String numero;
     private double solde;
     private Personne titulaire;
+    private List<PassageEnNegatifSubscriber> passageEnNegatifEvent = new ArrayList<>();
 
     public Compte(String numero, Personne titulaire) {
         this.numero = numero;
@@ -36,6 +40,11 @@ public abstract class Compte implements Banker{
     }
 
     //endregion
+
+
+    public void subscribePassageEnNegatifEvent(PassageEnNegatifSubscriber subscriber){
+        passageEnNegatifEvent.add(subscriber);
+    }
 
     public void retrait(double montant){
         if(montant <= 0){

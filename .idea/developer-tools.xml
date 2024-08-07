@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DeveloperToolsToolWindowSettingsV1" lastSelectedContentNodeId="sql-formatting">
+  <component name="DeveloperToolsToolWindowSettingsV1" lastSelectedContentNodeId="xml-text-escape">
     <developerToolsConfigurations>
+      <developerToolConfiguration developerToolId="text-filter" id="d0f774e0-7fde-4fad-adfb-2005474be1f9" name="Workbench">
+        <properties>
+          <property key="sourceText" type="INPUT" value="kotlin.String|[info] Application started&#10;[error] Error occurred while processing request" />
+          <property key="filteringNotContainingModeText" type="INPUT" value="kotlin.String|[info]" />
+          <property key="filteringContainingModeText" type="INPUT" value="kotlin.String|[error]" />
+          <property key="filteringRegexModeText" type="INPUT" value="kotlin.String|^\[error\].*$" />
+        </properties>
+      </developerToolConfiguration>
+      <developerToolConfiguration developerToolId="text-diff" id="235669d7-f42b-467d-9d24-748fb6e11502" name="Workbench">
+        <properties>
+          <property key="firstText" type="INPUT" value="kotlin.String|The sky is blue,&#10;The sun is shining,&#10;And the birds are singing." />
+          <property key="secondText" type="INPUT" value="kotlin.String|The sky is gray,&#10;The rain is pouring,&#10;And the birds are silent." />
+        </properties>
+      </developerToolConfiguration>
       <developerToolConfiguration developerToolId="sql-formatting" id="a84f00b8-7c88-4206-8604-947c7ebd5526" name="Workbench">
         <properties>
           <property key="sourceText" type="INPUT" value="kotlin.String|select c.id, c.name, o.address, o.orderedAt from customers c left join orders o ON (o.customerId = c.id) order by o.orderedAt" />
         </properties>
       </developerToolConfiguration>
     </developerToolsConfigurations>
+    <expandedGroupNodeIds />
   </component>
 </project>

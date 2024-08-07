@@ -159,17 +159,11 @@ public class Main {
   private static void encounterMonster() throws InterruptedException {
     Monstre monstre;
     int monsterType = random.nextInt(3);
-    switch (monsterType) {
-      case 0:
-        monstre = new Loup();
-        break;
-      case 1:
-        monstre = new Orque();
-        break;
-      default:
-        monstre = new Dragonnet();
-        break;
-    }
+    monstre = switch (monsterType) {
+          case 0 -> new Loup();
+          case 1 -> new Orque();
+          default -> new Dragonnet();
+      };
 
     if(monstre.getForce() >= 40 && monstre.getPV() >= 40){
       System.out.println("Attention ! Le Boss n'est pas loin ...");

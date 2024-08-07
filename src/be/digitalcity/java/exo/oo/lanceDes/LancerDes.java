@@ -20,12 +20,12 @@ public enum LancerDes {
     }
 
 
-    public static int lancerDe(int nbrFace, int nbrLance, int nbrLanceGarde) {
+    public int lancerDe(int nbrLance, int nbrLanceGarde) {
         List<Integer> listLanceDes = new ArrayList<Integer>();
 
 //        System.out.println("Un Dés magique à " + nbrFace +" faces a été lancé "+ nbrLance + " fois");
         for (int i = 0; i < nbrLance; i++) {
-            listLanceDes.add(random.nextInt(1, nbrFace + 1));
+            listLanceDes.add(random.nextInt(1, this.nbrFaces + 1));
         }
         //  OR listLanceDes.sort(Collections.reverseOrder());
         return listLanceDes.stream().sorted(Comparator.reverseOrder()).limit(nbrLanceGarde)

@@ -14,8 +14,8 @@ public class DemoStatic {
 //        System.out.println(LanceDes.lancerDe(6, 10, 3));
 //endregion
 
-        System.out.println(LancerDes.lancerDe(LancerDes.SIX.nbrFaces, 3, 2));
-        System.out.println(LancerDes.lancerDe(LancerDes.CENT.nbrFaces, 10, 5));
+        System.out.println(LancerDes.SIX.lancerDe( 3, 2));
+        System.out.println(LancerDes.CENT.lancerDe( 10, 5));
 
 
     }
