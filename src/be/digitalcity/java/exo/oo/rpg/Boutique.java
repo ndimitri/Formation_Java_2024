@@ -15,7 +15,7 @@ public class Boutique {
       System.out.println("3. Vendre du cuir (2 or par cuir)");
       System.out.println("4. Vendre tout le cuir (2 or par cuir)");
       System.out.println("5. Acheter une Potion Simple (10 or pour +7PV)");
-      System.out.println("6. Acheter une Potion Maxi (50 or pour +20PV)");
+      System.out.println("6. Acheter une Potion Maxi (50 or pour +40PV)");
       System.out.println("7. Quitter la boutique");
       int choix;
       try{
@@ -77,8 +77,8 @@ public class Boutique {
   private void acheterMaxiPotion(Heros heros){
     if(heros.getOr() >= 50){
       heros.retirerOr(50);
-      heros.regeneration(20);
-      System.out.println("Vous avez acheté une Potion Maxi +20PV.");
+      heros.regeneration(40);
+      System.out.println("Vous avez acheté une Potion Maxi +40PV.");
     }else {
       System.out.println("Vous n'avez pas assez d'or.");
     }
