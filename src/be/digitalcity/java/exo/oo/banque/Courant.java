@@ -34,6 +34,9 @@ public class Courant extends Compte{
             //Exception
             throw new SoldeInsuffisantException();
         }
+        if(super.getSolde() < 0){
+            notifyPassageEnNegatif();
+        }
         super.retrait(montant);
     }
 
