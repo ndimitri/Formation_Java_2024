@@ -47,10 +47,15 @@ public abstract class Compte implements Banker{
     }
 
     public void retrait(double montant){
+
         if(montant <= 0){
             throw new IllegalArgumentException("Montant du retrait négatif ou égale à 0");
         }
+        boolean isPositif = this.solde >= 0;
         setSolde(this.solde-montant);
+        if(isPositif && this.solde < 0){
+            passageEnNegatifEvent.forEach((e) ->e.execute(this) );
+        }
     }
 
     public void depot(double montant){

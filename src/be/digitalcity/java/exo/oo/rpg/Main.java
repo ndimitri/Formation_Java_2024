@@ -1,4 +1,11 @@
 package be.digitalcity.java.exo.oo.rpg;
+import be.digitalcity.java.exo.oo.rpg.models.personnages.heros.Heros;
+import be.digitalcity.java.exo.oo.rpg.models.personnages.heros.Humain;
+import be.digitalcity.java.exo.oo.rpg.models.personnages.monstres.Dragonnet;
+import be.digitalcity.java.exo.oo.rpg.models.personnages.monstres.Loup;
+import be.digitalcity.java.exo.oo.rpg.models.personnages.monstres.Monstre;
+import be.digitalcity.java.exo.oo.rpg.models.personnages.monstres.Orque;
+
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
@@ -125,7 +132,7 @@ public class Main {
       case 3 -> {
         System.out.println("PV");
         System.out.println("+" + puissanceObjet +" PV");
-        heros.regeneration(puissanceObjet);
+        heros.ajouterPV(puissanceObjet);
       }
       default -> System.out.println("Vous avez raté votre chance !!!");
     }
@@ -237,12 +244,12 @@ public class Main {
       scanner.nextLine(); // Consume newline left-over
 
       if (choix == 1) {
-        heros.ajouterOr(monstre.depouillerOr());
+        heros.ajouterOr(monstre.getOr());
         if (monstre instanceof Loup || monstre instanceof Dragonnet) {
-          heros.ajouterCuir(monstre.depouillerCuir());
+          heros.ajouterCuir(monstre.getCuir());
         }
-        System.out.println("Vous avez récupéré " + monstre.depouillerOr() + " or et " +
-            (monstre instanceof Loup || monstre instanceof Dragonnet ? monstre.depouillerCuir()
+        System.out.println("Vous avez récupéré " + monstre.getOr() + " or et " +
+            (monstre instanceof Loup || monstre instanceof Dragonnet ? monstre.getCuir()
                 + " cuir" : "aucun cuir") + ".");
       }
     } else if (!heros.estVivant()) {

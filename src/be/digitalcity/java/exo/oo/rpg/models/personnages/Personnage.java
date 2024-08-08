@@ -1,4 +1,8 @@
-package be.digitalcity.java.exo.oo.rpg;
+package be.digitalcity.java.exo.oo.rpg.models.personnages;
+
+import be.digitalcity.java.exo.oo.rpg.utils.De;
+import be.digitalcity.java.exo.oo.rpg.models.personnages.monstres.Monstre;
+import be.digitalcity.java.exo.oo.rpg.models.personnages.heros.Heros;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,13 +17,30 @@ public abstract class Personnage {
     this.pv = this.endurance + calculerModificateur(this.endurance);
   }
 
+  public int getEndurance() {
+    return endurance;
+  }
+
+  public int getForce() {
+    return force;
+  }
+
+  public int getPV() {
+    return pv;
+  }
+
+  public boolean estVivant() {
+    return this.pv > 0;
+  }
+
   private int calculerCaracteristique() {
-    De de = new De(1, 6);
+    De de = new De(1,15);
     int[] des = new int[4];
     for (int i = 0; i < 4; i++) {
       des[i] = de.lancer();
     }
     java.util.Arrays.sort(des);
+
     return des[1] + des[2] + des[3];
   }
 
@@ -60,34 +81,18 @@ public abstract class Personnage {
     }
   }
 
-  public boolean estVivant() {
-    return this.pv > 0;
-  }
-
-  public int getEndurance() {
-    return endurance;
-  }
-
-  public int getForce() {
-    return force;
-  }
-
-  public int getPV() {
-    return pv;
-  }
-
-  public void ajouterEndurance(int valeur){
-    ajouterForce(valeur/2);
-    regeneration(valeur/2);
-  }
-
   public int regeneration() {
     int pvAdded = new De(3, 9).lancer();
     this.pv += pvAdded;
     return pvAdded;
   }
 
-  public int regeneration(int pvToAdd){
+  public void ajouterEndurance(int valeur){
+    ajouterForce(valeur/2);
+    ajouterPV(valeur/2);
+  }
+
+  public int ajouterPV(int pvToAdd){
     this.pv += pvToAdd;
     return pvToAdd;
   }

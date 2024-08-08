@@ -1,5 +1,7 @@
 package be.digitalcity.java.exo.oo.rpg;
 
+import be.digitalcity.java.exo.oo.rpg.models.personnages.heros.Heros;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -67,7 +69,7 @@ public class Boutique {
   private void acheterPotion(Heros heros){
     if(heros.getOr() >= 10){
       heros.retirerOr(10);
-      heros.regeneration(7);
+      heros.ajouterPV(7);
       System.out.println("Vous avez acheté une Potion Simple +7PV.");
     }else {
       System.out.println("Vous n'avez pas assez d'or.");
@@ -77,7 +79,7 @@ public class Boutique {
   private void acheterMaxiPotion(Heros heros){
     if(heros.getOr() >= 50){
       heros.retirerOr(50);
-      heros.regeneration(40);
+      heros.ajouterPV(40);
       System.out.println("Vous avez acheté une Potion Maxi +40PV.");
     }else {
       System.out.println("Vous n'avez pas assez d'or.");

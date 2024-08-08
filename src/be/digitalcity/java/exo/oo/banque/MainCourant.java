@@ -16,6 +16,12 @@ public class MainCourant {
         Epargne compteEpargne1 = new Epargne("IBAN987654321", pers1);
         Compte compteEpargne2 = new Epargne("IBAN789123456", pers2);
 
+
+        Banque banque = new Banque("Belfius");
+        banque.addCompte(compteCourant1);
+        compteCourant1.depot(50);
+        compteCourant1.retrait(100);
+
         //region Test Exo Heritage
 //        System.out.println(compteCourant1);
 //        System.out.println(compteEpargne1);
@@ -71,29 +77,29 @@ public class MainCourant {
         //region Exo Exception
 
         //Test IllegalArgumentException ligneDeCredit
-        try{
-            Courant compteCourantException = new Courant("IBAN123456789",-100, pers1);
-        }catch(IllegalArgumentException e){
-            System.out.println(e.getMessage());
-        }
-
-        //Test IllegalArgumentException depot()
-        try {
-            compteCourant1.depot(-10);
-
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
-
-        compteCourant1.depot(100);
-
-        //Test SoldeInsuffisantException
-        try{
-            compteCourant1.retrait(500);
-        } catch (SoldeInsuffisantException e){
-            System.out.println(e.getMessage());
-        }
-        System.out.println(compteCourant1);
+//        try{
+//            Courant compteCourantException = new Courant("IBAN123456789",-100, pers1);
+//        }catch(IllegalArgumentException e){
+//            System.out.println(e.getMessage());
+//        }
+//
+//        //Test IllegalArgumentException depot()
+//        try {
+//            compteCourant1.depot(-10);
+//
+//        } catch (IllegalArgumentException e) {
+//            System.out.println(e.getMessage());
+//        }
+//
+//        compteCourant1.depot(100);
+//
+//        //Test SoldeInsuffisantException
+//        try{
+//            compteCourant1.retrait(500);
+//        } catch (SoldeInsuffisantException e){
+//            System.out.println(e.getMessage());
+//        }
+//        System.out.println(compteCourant1);
 
 
         //endregion

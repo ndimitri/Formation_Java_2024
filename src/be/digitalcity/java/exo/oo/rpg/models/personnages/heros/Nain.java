@@ -1,4 +1,4 @@
-package be.digitalcity.java.exo.oo.rpg;
+package be.digitalcity.java.exo.oo.rpg.models.personnages.heros;
 
 public class Nain extends Heros {
   public Nain() {

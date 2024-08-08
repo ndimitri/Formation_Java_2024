@@ -1,4 +1,4 @@
-package be.digitalcity.java.exo.oo.rpg;
+package be.digitalcity.java.exo.oo.rpg.utils;
 
 import java.util.Random;
 

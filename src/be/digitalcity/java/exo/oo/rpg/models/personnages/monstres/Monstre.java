@@ -1,13 +1,19 @@
-package be.digitalcity.java.exo.oo.rpg;
+package be.digitalcity.java.exo.oo.rpg.models.personnages.monstres;
 
-import java.util.Random;
+import be.digitalcity.java.exo.oo.rpg.utils.De;
+import be.digitalcity.java.exo.oo.rpg.models.personnages.Personnage;
+import be.digitalcity.java.exo.oo.rpg.utils.BonusStatsUtils;
 
 public abstract class Monstre extends Personnage {
   private int or;
   private int cuir;
 
-  protected Monstre(int bonusEndurance, int bonusForce) {
-    super(new Random().nextInt(10,30)+bonusEndurance, new Random().nextInt(10,20)+bonusForce);
+  public Monstre(int bonusEndurance, int bonusForce) {
+    super(BonusStatsUtils.bonusEnduranceMonstres() + bonusEndurance, BonusStatsUtils.bonusForceMonstres() + bonusForce);
+    creerRessources();
+  }
+
+  private void creerRessources(){
     if(this.getPV() + this.getForce() <= 30 ){
       this.or = new De(1, 6).lancer();
       this.cuir = new De(1, 4).lancer();
@@ -25,14 +31,13 @@ public abstract class Monstre extends Personnage {
       this.cuir = new De(1, 4).lancer() * 10;
     }
 
-
   }
 
-  public int depouillerOr() {
+  public int getOr() {
     return this.or;
   }
 
-  public int depouillerCuir() {
+  public int getCuir() {
     return this.cuir;
   }
 
