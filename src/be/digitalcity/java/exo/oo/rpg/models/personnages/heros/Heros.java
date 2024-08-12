@@ -2,6 +2,7 @@ package be.digitalcity.java.exo.oo.rpg.models.personnages.heros;
 
 import be.digitalcity.java.exo.oo.rpg.models.personnages.monstres.Monstre;
 import be.digitalcity.java.exo.oo.rpg.models.personnages.Personnage;
+import be.digitalcity.java.exo.oo.rpg.utils.BonusEnum;
 import be.digitalcity.java.exo.oo.rpg.utils.BonusStatsUtils;
 
 import java.awt.*;
@@ -18,7 +19,7 @@ public abstract class Heros extends Personnage {
   private Point herosPosition;
 
   public Heros(int bonusEndurance, int bonusForce) {
-    super( BonusStatsUtils.bonusEnduranceHeros() + bonusEndurance, BonusStatsUtils.bonusForceHeros() + bonusForce);
+    super( BonusEnum.HERO.getBonusEndurance() + bonusEndurance, BonusStatsUtils.bonusForceHeros() + bonusForce);
     this.or = 0;
     this.cuir = 0;
     this.niveau = 1;

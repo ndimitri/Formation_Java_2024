@@ -8,10 +8,11 @@ public class Map {
     public final int GRID_SIZE = 5;
     private Heros heros;
     private char[][] grid;
-    private Random random = new Random();
+//    private Random random = new Random();
 
-    public Map() {
+    public Map(Heros heros) {
         this.grid = new char[GRID_SIZE][GRID_SIZE];
+        this.heros = heros;
         this.heros.setPosition(GRID_SIZE/2, GRID_SIZE/2);
     }
 

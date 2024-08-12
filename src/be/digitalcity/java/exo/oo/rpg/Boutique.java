@@ -23,7 +23,7 @@ public class Boutique {
       try{
         choix = scanner.nextInt();
       }catch(InputMismatchException e){
-        choix = 8;
+        choix = 0;
       }
       scanner.nextLine(); // Consume newline left-over
 
