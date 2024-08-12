@@ -17,7 +17,7 @@ public class EventsPlayer {
     private Scanner scanner = new Scanner(System.in);
 
 
-    public void choicOfTheUniverse(Heros heros) throws InterruptedException {
+    public void choiceOfTheUniverse(Heros heros) throws InterruptedException {
         int choiceOfTheUniverse = random.nextInt(5);
             if (choiceOfTheUniverse == 0) {
                 encounterMonster(heros);
