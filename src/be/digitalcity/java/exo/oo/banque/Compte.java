@@ -54,7 +54,7 @@ public abstract class Compte implements Banker{
         boolean isPositif = this.solde >= 0;
         setSolde(this.solde-montant);
         if(isPositif && this.solde < 0){
-            passageEnNegatifEvent.forEach((e) ->e.execute(this) );
+            passageEnNegatifEvent.forEach((e) ->e.onPassageEnNegatif(this) );
         }
     }
 
